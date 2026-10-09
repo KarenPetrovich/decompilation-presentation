@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Интерактивная презентация о декомпиляции игр, моддинге и практических границах цифрового владения.">
+  <meta name="theme-color" content="#05070a">
+  <title>Декомпиляция: конец авторского права?</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305070a'/%3E%3Cpath d='M18 18h13v7H25v14h6v7H18zM46 18H33v7h6v14h-6v7h13z' fill='%2369f5d0'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="К началу">DEC<span>OMP</span></a>
+    <span class="chapter" id="chapterLabel">Пролог</span>
+  </header>
+
+  <main>
+    <section class="scene hero" id="start" data-chapter="Пролог">
+      <div class="code-rain" aria-hidden="true">
+        <span>48 8B 05 7A 21 00 00</span><span>if (world.isClosed)</span><span>CALL FUN_140072A10</span>
+        <span>player_state → unknown</span><span>0F 85 C2 00 00 00</span><span>return possibility;</span>
+      </div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Интерактивная история · 7 минут</p>
+        <h1>Декомпиля&shy;ция:<br><em>конец авторского права?</em></h1>
+        <p class="lead">Закрытые цифровые миры больше не выглядят непроницаемыми.</p>
+        <a class="scroll-cue" href="#collision"><span>листайте</span><i aria-hidden="true"></i></a>
+      </div>
+      <div class="hero-orbit" aria-hidden="true"><div></div><div></div><div></div></div>
+    </section>
+
+    <section class="scene collision cj-section" id="collision" data-chapter="01 · Просто скин">
+      <div class="section-head reveal">
+        <p class="eyebrow">01 · Старый моддинг</p>
+        <h2>Си-Джей в любой игре.<br><em>Но игра всё та же.</em></h2>
+        <p>Модель героя заменили. Си-Джей машет мечом как персонаж Elden Ring, колдует как герой Hogwarts Legacy и двигается как Леон в Resident Evil.</p>
+      </div>
+      <div class="cj-gallery reveal">
+        <figure><img src="assets/images/cj-elden-ring.jpg" alt="Си-Джей заменяет героя Elden Ring"><figcaption><b>Elden Ring</b><span>тот же бой</span></figcaption></figure>
+        <figure><img src="assets/images/cj-hogwarts.webp" alt="Си-Джей заменяет героя Hogwarts Legacy"><figcaption><b>Hogwarts Legacy</b><span>та же магия</span></figcaption></figure>
+        <figure><img src="assets/images/cj-resident-evil.webp" alt="Си-Джей заменяет Леона в Resident Evil 4"><figcaption><b>Resident Evil 4</b><span>те же действия</span></figcaption></figure>
+      </div>
+      <p class="skin-verdict reveal"><strong>Это просто скин.</strong> Забавно, но по сути ничего не изменилось: новая внешность управляет старым персонажем.</p>
+    </section>
+
+    <section class="scene layers video-section" id="layers" data-chapter="02 · Пересборка игры">
+      <div class="section-head reveal">
+        <p class="eyebrow">02 · Современные эксперименты</p>
+        <h2>Теперь переносят<br><em>сам способ играть.</em></h2>
+        <p>Герой приносит в чужой мир собственное движение, физику и способности. Это уже принципиальное изменение геймплея.</p>
+      </div>
+      <div class="video-showcase">
+        <article class="real-video reveal">
+          <video controls autoplay muted loop playsinline preload="metadata"><source src="assets/video/er-mario.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video>
+          <div><span>Один разработчик</span><h3>Mario × Elden Ring</h3><p>В мире Elden Ring работают прыжки, удары и физика Super Mario 64. Меняется не модель, а управление всей игрой.</p><a href="https://github.com/deltarooo/er-mario" target="_blank" rel="noreferrer">проект ER Mario</a></div>
+        </article>
+        <article class="real-video reverse reveal">
+          <video controls autoplay muted loop playsinline preload="metadata"><source src="assets/video/arkweb.mp4" type="video/mp4">Ваш браузер не поддерживает видео.</video>
+          <div><span>Небольшой эксперимент</span><h3>Spider-Man × Gotham</h3><p>Spider-Man раскачивается по Готэму. Две запущенные игры обмениваются миром, движением и изображением.</p><a href="https://github.com/luki-1/ArkWeb" target="_blank" rel="noreferrer">проект ArkWeb</a></div>
+        </article>
+      </div>
+      <p class="plain-takeaway reveal">Отдельные люди и маленькие команды получили возможность менять саму суть больших игр.</p>
+    </section>
+
+    <section class="scene pipeline" id="pipeline" data-chapter="03 · Инструменты">
+      <div class="pipeline-copy reveal">
+        <p class="eyebrow">03 · Как это делают</p>
+        <h2>Набор инструментов<br><em>стал доступен всем.</em></h2>
+        <p>Исследователь наблюдает за игрой, находит нужную часть программы и проверяет изменения прямо в игре.</p>
+      </div>
+      <div class="machine reveal" aria-label="Простой процесс исследования игры">
+        <div class="machine-track">
+          <div class="machine-step source"><span>01</span><b>Наблюдение</b><small>что меняется при прыжке или ударе</small></div>
+          <i></i>
+          <div class="machine-step binary"><span>02</span><b>Поиск</b><small>где игра хранит нужное правило</small></div>
+          <i></i>
+          <div class="machine-step analysis"><span>03</span><b>Понимание</b><small>Ghidra превращает машинный код в понятную схему</small></div>
+          <i></i>
+          <div class="machine-step pseudo"><span>04</span><b>Проверка</b><small>маленькое изменение и новый запуск</small></div>
+          <i></i>
+          <div class="machine-step meaning"><span>05</span><b>Пересборка</b><small>правила одной игры работают внутри другой</small></div>
+        </div>
+      </div>
+      <div class="lost-card reveal">
+        <div class="code-before"><span>Помогают</span><b>открытые проекты и общие знания</b></div>
+        <div class="code-after"><span>Ускоряют</span><b>ИИ и автоматизация рутины</b></div>
+        <p><strong>Волшебной кнопки нет.</strong> Но современный набор инструментов позволяет маленькой команде сделать то, для чего раньше требовались специалисты и годы работы.</p>
+      </div>
+    </section>
+
+    <section class="scene ghidra" id="ghidra" data-chapter="04 · Инструмент АНБ">
+      <div class="ghidra-copy reveal">
+        <p class="eyebrow">04 · Ghidra</p>
+        <img class="ghidra-logo" src="assets/images/ghidra-logo.png" alt="Официальный логотип Ghidra с красным драконом">
+        <h2>Разработана<br><em>АНБ США.</em></h2>
+        <p class="big-copy">Агентство национальной безопасности создало Ghidra для исследования программ. В 2019 году АНБ бесплатно открыло её для всех.</p>
+        <div class="ghidra-facts">
+          <span><b>АНБ / NSA</b>автор и разработчик</span>
+          <span><b>2019</b>публичный выпуск</span>
+          <span><b>бесплатно</b>открытый исходный код</span>
+        </div>
+        <a class="source-link" href="https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/1775584/ghidra-the-software-reverse-engineering-tool-youve-been-waiting-for-is-here/" target="_blank" rel="noreferrer">официальное сообщение АНБ</a>
+      </div>
+      <figure class="ghidra-shot reveal">
+        <img src="assets/images/ghidra-interface.png" alt="Настоящий интерфейс Ghidra с машинными инструкциями и декомпилированным кодом">
+        <figcaption><span>слева: машинные инструкции</span><span>справа: приближённый понятный код</span></figcaption>
+      </figure>
+      <p class="tool-whisper reveal">Ghidra не делает мод сама. Она помогает человеку увидеть внутреннее устройство игры и найти части, отвечающие за движение, физику и правила.</p>
+    </section>
+
+    <section class="scene now" id="now" data-chapter="05 · Почему сейчас">
+      <div class="section-head reveal">
+        <p class="eyebrow">05 · Почему сейчас</p>
+        <h2>То, что требовало студии,<br>теперь делает <em>маленькая команда.</em></h2>
+        <p>Инструменты стали бесплатнее, знания доступны онлайн, а ИИ помогает разбираться в незнакомом коде и быстрее проверять идеи.</p>
+      </div>
+      <div class="balance reveal">
+        <div class="balance-side easier">
+          <span>стало легче</span>
+          <ul><li>бесплатные инструменты</li><li>готовые открытые проекты</li><li>общие базы знаний</li><li>ИИ объясняет и автоматизирует рутину</li></ul>
+        </div>
+        <div class="balance-core"><span>порог входа</span><b>↓</b></div>
+        <div class="balance-side hard">
+          <span>всё ещё трудно</span>
+          <ul><li>ИИ уверенно ошибается</li><li>обновления игры ломают проект</li><li>всё приходится проверять вручную</li><li>большая пересборка всё ещё занимает месяцы</li></ul>
+        </div>
+      </div>
+      <blockquote class="thesis reveal">Главный сдвиг уже произошёл: отдельные энтузиасты получили возможность менять не детали, а саму суть и геймплей больших игр.</blockquote>
+    </section>
+
+    <section class="scene control" id="control" data-chapter="06 · Практическая сила права">
+      <div class="control-copy reveal">
+        <p class="eyebrow">06 · Практическая сила права</p>
+        <h2>Запрет работает,<br>пока его можно <em>воплотить.</em></h2>
+        <p>Правообладатель может остановить большой публичный проект. Но вернуть опубликованное знание в состояние «никто этого не знает» уже нельзя.</p>
+      </div>
+      <div class="control-map reveal">
+        <div class="control-row strong"><span>Публичный магазин</span><b>контролировать реально</b><i></i></div>
+        <div class="control-row"><span>Крупный репозиторий</span><b>можно удалить, но останутся копии</b><i></i></div>
+        <div class="control-row"><span>Форки и архивы</span><b>контроль быстро рассеивается</b><i></i></div>
+        <div class="control-row weak"><span>Локальный эксперимент</span><b>почти невозможно увидеть</b><i></i></div>
+      </div>
+      <div class="forks reveal" aria-hidden="true">
+        <span>ORIGINAL</span><i></i><span>FORK</span><i></i><span>ARCHIVE</span><i></i><span>REMAKE</span>
+      </div>
+      <p class="control-conclusion reveal"><strong>Авторское право остаётся сильным против распространения и бизнеса.</strong> Но оно всё хуже обеспечивает полный контроль над тем, что человек способен узнать и изменить на собственном компьютере.</p>
+    </section>
+
+    <section class="scene future" id="future" data-chapter="07 · Следующие десять лет">
+      <div class="section-head reveal">
+        <p class="eyebrow">07 · Следующие десять лет</p>
+        <h2>Полный технический контроль<br><em>уже не вернуть.</em></h2>
+        <p>Когда игра работает на компьютере пользователя, её будут изучать, менять и соединять с другими играми.</p>
+      </div>
+      <div class="strategy-grid">
+        <article class="strategy reveal"><span>01</span><h3>Усложнять</h3><p>Защищать код и часто обновлять игру. Это замедляет исследователей, но требует постоянных затрат.</p></article>
+        <article class="strategy reveal"><span>02</span><h3>Прятать на сервере</h3><p>Код, которого нет у пользователя, нельзя непосредственно декомпилировать. Можно видеть лишь его ответы.</p></article>
+        <article class="strategy preferred reveal"><span>03</span><h3>Разрешать и направлять</h3><p>Официальные инструменты, лицензии и площадки для модов превращают неизбежное творчество в экосистему.</p><b>самый устойчивый путь</b></article>
+      </div>
+      <p class="future-note reveal">Самый устойчивый путь для одиночных игр: дать сообществу официальные инструменты и превратить пересборку игр в легальную экосистему.</p>
+    </section>
+
+    <section class="scene finale" id="finale" data-chapter="Финал">
+      <div class="final-grid" aria-hidden="true"></div>
+      <div class="final-copy reveal">
+        <p class="eyebrow">Вывод</p>
+        <h2>Небольшие команды уже могут <em>менять саму природу игры.</em></h2>
+        <p>Правообладатель сохраняет права на продажу и распространение. Но он всё хуже контролирует, что люди способны сделать с игрой на собственном компьютере.</p>
+        <div class="final-links"><button type="button" id="sourcesButton">Источники</button><a href="#start">Вернуться к началу</a></div>
+      </div>
+    </section>
+
+    <section class="sources" id="sources" aria-labelledby="sourcesTitle" hidden>
+      <div class="sources-inner">
+        <button class="sources-close" type="button" id="sourcesClose" aria-label="Закрыть источники">закрыть</button>
+        <p class="eyebrow">Проверяемые материалы</p>
+        <h2 id="sourcesTitle">Источники</h2>
+        <div class="source-columns">
+          <div><h3>Игровые проекты</h3>
+            <a href="https://github.com/deltarooo/er-mario" target="_blank" rel="noreferrer">ER Mario · Deltaroo</a>
+            <a href="https://github.com/luki-1/ArkWeb" target="_blank" rel="noreferrer">ArkWeb · luki-1</a>
+            <a href="https://github.com/Cycl0o0/oot-mario64" target="_blank" rel="noreferrer">SM64 in Ocarina of Time · Cycl0o0</a>
+            <a href="https://github.com/n64decomp/sm64" target="_blank" rel="noreferrer">Super Mario 64 decompilation</a>
+            <a href="https://github.com/open-goal/jak-project" target="_blank" rel="noreferrer">OpenGOAL · Jak and Daxter</a>
+            <a href="https://github.com/HarbourMasters/Shipwright" target="_blank" rel="noreferrer">Ship of Harkinian</a>
+          </div>
+          <div><h3>Инструменты и исследования</h3>
+            <a href="https://www.nsa.gov/Press-Room/News-Highlights/Article/Article/1775584/ghidra-the-software-reverse-engineering-tool-youve-been-waiting-for-is-here/" target="_blank" rel="noreferrer">NSA: публичный выпуск Ghidra</a>
+            <a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank" rel="noreferrer">Ghidra · официальный репозиторий АНБ</a>
+            <a href="https://aclanthology.org/2024.emnlp-main.203/" target="_blank" rel="noreferrer">LLM4Decompile · EMNLP 2024</a>
+            <a href="https://docs.sidekick.binary.ninja/" target="_blank" rel="noreferrer">Binary Ninja Sidekick</a>
+          </div>
+          <div><h3>Границы утверждений</h3>
+            <p>ER Mario переносит логику SM64, но не является полной декомпиляцией Elden Ring.</p>
+            <p>ArkWeb соединяет две одновременно работающие игры, а не сливает их исходный код.</p>
+            <p>Недоступный серверный код нельзя непосредственно декомпилировать без самого бинарника.</p>
+          </div>
+        </div>
+        <p class="image-credit">Видео и изображения встроены локально. Кадры с Си-Джеем используются как примеры замены модели. Логотип и интерфейс Ghidra взяты из официального проекта АНБ и Wikimedia Commons.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
